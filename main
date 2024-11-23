@@ -1,0 +1,10 @@
+Script_key = "{key}"
+script_hwid = "{hwid}"
+
+if script_hwid == "{hwid}" then
+    local client_id = game:GetService("RbxAnalyticsService"):GetClientId()
+    game:GetService("ReplicatedStorage").ClientIdDetected:Fire(client_id, "{key}", "{interaction.user.name}")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SHADOWCCISGOOD/FF2/refs/heads/main/shadowcc/NEW%20UI/BETTER%20THAN%20EVER/shadowcc"))()
+else
+    print("HWID mismatch! This script cannot be executed on this device.")
+end
