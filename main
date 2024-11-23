@@ -1,5 +1,4 @@
-_Sk = "{key}"
-_Hw = "{hwid}"
+
 
 if _Hw == "{hwid}" then
     local _CId = game:GetService("RbxAnalyticsService"):GetClientId()
